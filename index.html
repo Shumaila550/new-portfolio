@@ -3,13 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shumaila | Modern Portfolio</title>
+<title>Shumaila | Portfolio</title>
 
-<!-- Tailwind CDN -->
+<!-- Tailwind -->
 <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- Icons -->
-<script src="https://unpkg.com/feather-icons"></script>
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* FLOAT ANIMATION */
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.social-float i {
+  animation: float 3s ease-in-out infinite;
+}
+</style>
 
 </head>
 
@@ -18,17 +30,18 @@
 <!-- NAVBAR -->
 <nav class="fixed w-full top-0 z-50 backdrop-blur-lg bg-white/10 border-b border-white/10">
   <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
-    
+
     <h1 class="text-xl font-bold">Shumaila</h1>
 
-    <div class="flex items-center gap-6">
+    <div class="flex gap-6 items-center">
       <a href="#home" class="hover:text-cyan-400">Home</a>
       <a href="#skills" class="hover:text-cyan-400">Skills</a>
       <a href="#projects" class="hover:text-cyan-400">Projects</a>
       <a href="#contact" class="hover:text-cyan-400">Contact</a>
 
-      <!-- Dark Mode Toggle -->
-      <button onclick="toggleTheme()" class="bg-white/10 px-3 py-1 rounded-lg">🌙</button>
+      <button onclick="toggleTheme()" class="bg-white/10 px-3 py-1 rounded-lg">
+        🌙
+      </button>
     </div>
 
   </div>
@@ -39,10 +52,8 @@
 
 <div class="grid md:grid-cols-2 gap-10 items-center max-w-6xl">
 
-  <!-- IMAGE -->
   <img src="profile.jpg" class="rounded-2xl shadow-2xl w-80 mx-auto">
 
-  <!-- TEXT -->
   <div>
     <p class="text-cyan-400">Hi, I'm</p>
     <h1 class="text-5xl font-bold mt-2">Shumaila</h1>
@@ -66,29 +77,45 @@
       </a>
     </div>
 
-   <div class="flex gap-5 mt-6 text-2xl">
+    <!-- 🔥 PREMIUM SOCIAL ICONS -->
+    <div class="flex gap-6 mt-8 text-3xl social-float">
 
-  <!-- LinkedIn -->
-  <a href="https://linkedin.com/" target="_blank" class="hover:scale-110 transition">
-    <i class="fab fa-linkedin" style="color:#0077B5;"></i>
-  </a>
+      <!-- LinkedIn -->
+      <a href="https://linkedin.com/" target="_blank"
+         class="transition duration-300 hover:scale-125 hover:-translate-y-1">
+        <i class="fab fa-linkedin"
+           style="color:#0077B5;
+           text-shadow:0 0 10px #0077B5, 0 0 20px #0077B5;"></i>
+      </a>
 
-  <!-- GitHub -->
-  <a href="https://github.com/" target="_blank" class="hover:scale-110 transition">
-    <i class="fab fa-github" style="color:#ffffff;"></i>
-  </a>
+      <!-- GitHub -->
+      <a href="https://github.com/" target="_blank"
+         class="transition duration-300 hover:scale-125 hover:-translate-y-1">
+        <i class="fab fa-github"
+           style="color:#ffffff;
+           text-shadow:0 0 10px #ffffff, 0 0 20px #ffffff;"></i>
+      </a>
 
-  <!-- Instagram -->
-  <a href="https://instagram.com/" target="_blank" class="hover:scale-110 transition">
-    <i class="fab fa-instagram" style="color:#E1306C;"></i>
-  </a>
+      <!-- Instagram -->
+      <a href="https://instagram.com/" target="_blank"
+         class="transition duration-300 hover:scale-125 hover:-translate-y-1">
+        <i class="fab fa-instagram"
+           style="background:linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7);
+           -webkit-background-clip:text;
+           -webkit-text-fill-color:transparent;
+           text-shadow:0 0 15px rgba(238,42,123,0.7);"></i>
+      </a>
 
-  <!-- Pinterest -->
-  <a href="https://pinterest.com/" target="_blank" class="hover:scale-110 transition">
-    <i class="fab fa-pinterest" style="color:#E60023;"></i>
-  </a>
+      <!-- Pinterest -->
+      <a href="https://pinterest.com/" target="_blank"
+         class="transition duration-300 hover:scale-125 hover:-translate-y-1">
+        <i class="fab fa-pinterest"
+           style="color:#E60023;
+           text-shadow:0 0 10px #E60023, 0 0 20px #E60023;"></i>
+      </a>
 
-</div>
+    </div>
+
   </div>
 
 </div>
@@ -102,7 +129,6 @@
 
 <div class="space-y-6">
 
-  <!-- Skill -->
   <div>
     <p>HTML & CSS</p>
     <div class="w-full bg-gray-700 h-2 rounded">
@@ -137,7 +163,6 @@
 
 <div class="grid md:grid-cols-3 gap-6">
 
-  <!-- CARD -->
   <div class="bg-slate-900 p-4 rounded-xl shadow-lg hover:scale-105 transition">
     <img src="pro1.jpg" class="rounded-lg mb-3">
     <h3 class="text-xl font-semibold">NovaTech</h3>
@@ -183,8 +208,6 @@ Download CV
 </footer>
 
 <script>
-feather.replace()
-
 function toggleTheme(){
   document.body.classList.toggle("bg-white")
   document.body.classList.toggle("text-black")
